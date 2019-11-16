@@ -31,7 +31,7 @@ for (let c = 0; c < brickColumnCount; c++) {
 function drawBall() {
   ctx.beginPath();
   ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-  ctx.fillStyle = '#0095DD';
+  ctx.fillStyle = 'black';
   ctx.fill();
   ctx.closePath();
 }
@@ -39,7 +39,7 @@ function drawBall() {
 function drawPaddle() {
   ctx.beginPath();
   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-  ctx.fillStyle = '#0095DD';
+  ctx.fillStyle = 'black';
   ctx.fill();
   ctx.closePath();
 }
@@ -54,8 +54,15 @@ function drawBricks() {
         bricks[c][r].y = brickY;
         ctx.beginPath();
         ctx.rect(brickX, brickY, brickWidth, brickHeight);
-        ctx.fillStyle = '#0095DD';
+        ctx.fillStyle = '#cb4154';
+        ctx.shadowColor = 'gray'
+        ctx.shadowBlur = 20;
+        ctx.shadowOffsetX = 15;
+        ctx.shadowOffsetY = 15;
         ctx.fill();
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = 'dark gray';
+        ctx.stroke();
         ctx.closePath();
       }
     }
@@ -158,34 +165,16 @@ function collisionDetection() {
   }
 }
 
-WebFontConfig = {
-  custom: { families: ['Press Start 2P'],
-            urls: [ 'http://lemon-factory.net/reproduce/fonts/pressstart2p.css']},
-  active: function() {
-    /* code to execute once all font families are loaded */
-    console.log(" I sure hope my font is loaded now. ");
-  }
-};
-(function() {
-  var wf = document.createElement('script');
-  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-  wf.type = 'text/javascript';
-  wf.async = 'true';
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(wf, s);
-})();
-
 function drawScore() {
   ctx.font = '16px Arial';
-  ctx.fillStyle = '#0095DD';
+  ctx.fillStyle = '#cb4154';
   ctx.fillText('Score: ' + score, 8, 20);
 }
 
 function drawLives() {
-  ctx.font = 'Press Start 2P';
+  ctx.font = "16px Arial";
   //ctx.font = "Press Start 2P";
-  ctx.fillStyle = '#0095DD';
+  ctx.fillStyle = '#cb4154';
   ctx.fillText('Lives: ' + lives, canvas.width - 65, 20);
 }
 

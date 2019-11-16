@@ -4,6 +4,13 @@
   font-family: 'Press Start 2P', cursive;
 }
 
+#preloadfont {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0;
+  position: absolute;
+  visibility: hidden;
+}
+
 h1 {
   padding: 10px;
   margin: 0 auto;
