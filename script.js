@@ -31,7 +31,7 @@ for (let c = 0; c < brickColumnCount; c++) {
 function drawBall() {
   ctx.beginPath();
   ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-  ctx.fillStyle = 'black';
+  ctx.fillStyle = '#484848';
   ctx.fill();
   ctx.closePath();
 }
@@ -166,14 +166,13 @@ function collisionDetection() {
 }
 
 function drawScore() {
-  ctx.font = '16px Arial';
+  ctx.font = 'bold 16px Arial';
   ctx.fillStyle = '#cb4154';
   ctx.fillText('Score: ' + score, 8, 20);
 }
 
 function drawLives() {
-  ctx.font = "16px Arial";
-  //ctx.font = "Press Start 2P";
+  ctx.font = "bold 16px Arial";
   ctx.fillStyle = '#cb4154';
   ctx.fillText('Lives: ' + lives, canvas.width - 65, 20);
 }

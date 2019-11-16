@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: 'Press Start 2P', cursive;
+  background-color: rgb(98, 98, 98);
 }
 
 #preloadfont {
@@ -17,7 +18,8 @@ h1 {
   text-align: center;
 }
 canvas {
-  background: #eee; 
+  /*background: #eee;*/
+  background-color: rgb(203, 203, 195); 
   display: block; 
   margin: 0 auto;
   font-family: 'Press Start 2P', cursive
