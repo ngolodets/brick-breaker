@@ -158,6 +158,24 @@ function collisionDetection() {
   }
 }
 
+WebFontConfig = {
+  custom: { families: ['Press Start 2P'],
+            urls: [ 'http://lemon-factory.net/reproduce/fonts/pressstart2p.css']},
+  active: function() {
+    /* code to execute once all font families are loaded */
+    console.log(" I sure hope my font is loaded now. ");
+  }
+};
+(function() {
+  var wf = document.createElement('script');
+  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+  wf.type = 'text/javascript';
+  wf.async = 'true';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(wf, s);
+})();
+
 function drawScore() {
   ctx.font = '16px Arial';
   ctx.fillStyle = '#0095DD';
@@ -165,7 +183,8 @@ function drawScore() {
 }
 
 function drawLives() {
-  ctx.font = '16 px Arial';
+  ctx.font = 'Press Start 2P';
+  //ctx.font = "Press Start 2P";
   ctx.fillStyle = '#0095DD';
   ctx.fillText('Lives: ' + lives, canvas.width - 65, 20);
 }
